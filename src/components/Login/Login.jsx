@@ -24,7 +24,7 @@ const Login = () => {
           <form>
             <input
               id="login-username"
-              type="email"
+              type="text"
               aria-describedby="emailHelp"
               placeholder="Username"
             />
@@ -33,6 +33,8 @@ const Login = () => {
             <input id="login-password" type="password" placeholder="Password" />
 
             <button className="login-button">Login</button>
+            <br></br>
+            <button className="login-button2">Register</button>
           </form>
         </div>
       </div>

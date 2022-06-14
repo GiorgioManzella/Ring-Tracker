@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Login from "./components/Login/Login.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./components/404/404";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
         <Routes>
           <Route path="/Login" element={<Login />} />
           <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

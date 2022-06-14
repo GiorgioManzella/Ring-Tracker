@@ -8,7 +8,7 @@ const Login = () => {
     console.log("submit");
   };
 
-  let gif = require("../../ring gif.gif");
+  let gif = require("../../ring-nobg.gif");
   let gif1 = require("../../Data/corporate1.gif");
   let gif2 = require("../../Data/corporate2.gif");
   let gif3 = require("../../Data/corporate3.gif");

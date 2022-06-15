@@ -7,6 +7,10 @@ const Login = () => {
     e.preventDefault();
     console.log("submit");
   };
+  const handleRegister = (e) => {
+    e.preventDefault();
+    window.location.href = "/register";
+  };
 
   let gif = require("../../ring-nobg.gif");
   let gif1 = require("../../Data/corporate1.gif");
@@ -34,7 +38,9 @@ const Login = () => {
 
             <button className="login-button">Login</button>
             <br></br>
-            <button className="login-button2">Register</button>
+            <button onClick={handleRegister} className="login-button2">
+              Register
+            </button>
           </form>
         </div>
       </div>

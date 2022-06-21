@@ -14,8 +14,24 @@ const Main = () => {
     window.location.href = "/login";
   };
 
+  const changeText = (e) => {
+    e.preventDefault();
+    if (document.getElementById("qwe").innerHTML === "Date") {
+      document.getElementById("qwe").innerHTML = "Name";
+    } else {
+      document.getElementById("qwe").innerHTML = "Date";
+    }
+  };
+
+  const data = ["asd", "gfasd", "asdsad"];
+  const searchBar = (e) => {
+    e.preventDefault();
+    let search = document.getElementById("search").value;
+  };
+
   return (
     <>
+      npm
       <Container id="login-mainContainer2">
         <Container id="window-container1">
           <div className="user-column col-4">
@@ -51,6 +67,19 @@ const Main = () => {
           </div>
           <div className="data-column col-8">
             <div className="bugs-list col-7">
+              <div className="search-bar">
+                <input
+                  onChange={searchBar}
+                  id="search"
+                  className="search"
+                  type="text"
+                  placeholder="Search"
+                />
+                <span id="sort-by">sort by</span>
+                <button onClick={changeText} id="qwe" className="button-sort">
+                  date
+                </button>
+              </div>
               <div className="bugs">
                 <p className="bugs-text">the error has been reported</p>
                 <p className="bugs-text1">Mark</p>

@@ -1,11 +1,36 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./Login.css";
 
 const Login = () => {
-  const handleSubmit = (e) => {
+  const [userName, setuserName] = useState("");
+  const [password, setPassword] = useState("");
+  let navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    let body = {
+      userName: userName,
+      password: password,
+    };
     e.preventDefault();
     console.log("submit");
+    let response = await fetch("http://localhost:3002/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (response.ok) {
+      let data = await response.json();
+      console.log(data);
+      localStorage.setItem("token", data.accessToken);
+      navigate("/Main");
+    }
   };
   const handleRegister = (e) => {
     e.preventDefault();
@@ -31,12 +56,20 @@ const Login = () => {
               type="text"
               aria-describedby="emailHelp"
               placeholder="Username"
+              onChange={(e) => setuserName(e.target.value)}
             />
 
             <br></br>
-            <input id="login-password" type="password" placeholder="Password" />
+            <input
+              id="login-password"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-            <button className="login-button">Login</button>
+            <button onClick={handleSubmit} className="login-button">
+              Login
+            </button>
             <br></br>
             <button onClick={handleRegister} className="login-button2">
               Register

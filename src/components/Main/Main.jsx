@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
+import { useState } from "react";
 import "./Main.css";
 
 const Main = () => {
@@ -12,6 +13,7 @@ const Main = () => {
   const handleLogout = (e) => {
     e.preventDefault();
     window.location.href = "/login";
+    localStorage.clear();
   };
 
   const changeText = (e) => {
@@ -28,6 +30,8 @@ const Main = () => {
     e.preventDefault();
     let search = document.getElementById("search").value;
   };
+
+  const [Search, setSearch] = useState("");
 
   return (
     <>
@@ -74,6 +78,7 @@ const Main = () => {
                   className="search"
                   type="text"
                   placeholder="Search"
+                  onChange={(e) => setSearch(e.target.value)}
                 />
                 <span id="sort-by">sort by</span>
                 <button onClick={changeText} id="qwe" className="button-sort">
@@ -97,7 +102,7 @@ const Main = () => {
                 <p className="bugs-text1">Mark</p>
               </div>
               <div className="bugs">
-                <p className="bugs-text">the error has been reported</p>
+                <p className="bugs-text">the erroreported</p>
                 <p className="bugs-text1">Mark</p>
               </div>
               <div className="bugs">
@@ -105,11 +110,11 @@ const Main = () => {
                 <p className="bugs-text1">Mark</p>
               </div>
               <div className="bugs">
-                <p className="bugs-text">the error has been reported</p>
+                <p className="bugs-text">the errorn reported</p>
                 <p className="bugs-text1">Mark</p>
               </div>
               <div className="bugs">
-                <p className="bugs-text">the error has been reported</p>
+                <p className="bugs-text">art error has been reported</p>
                 <p className="bugs-text1">Mark</p>
               </div>
             </div>

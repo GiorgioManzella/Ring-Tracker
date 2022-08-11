@@ -35,7 +35,6 @@ const Main = () => {
 
   return (
     <>
-      npm
       <Container id="login-mainContainer2">
         <Container id="window-container1">
           <div className="user-column col-4">

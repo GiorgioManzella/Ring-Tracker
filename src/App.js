@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./components/404/404";
 import Register from "./components/Register/Register";
 import Main from "./components/Main/Main";
+import MainPortal from "./components/Main-Portal/MainPortal";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Register" element={<Register />} />
           <Route path="/Main" element={<Main />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/Main-Portal" element={<MainPortal />} />
         </Routes>
       </BrowserRouter>
     </div>
